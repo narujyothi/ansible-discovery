@@ -1,0 +1,118 @@
+Tell me ur self and technical background
+Git Branching strategies 
+Git workflow explanation from starting to push stage
+How to configure git branches in jenkins.
+How to give security authentication in Maven
+Explain Maven structure
+Difference between ANT & Maven
+How to configure Ip Address in Maven
+How to change port no in jenkins server
+how to set maven path in linux
+how to create own docker image
+how to change port number in docker server
+what is the difference between DNS & SSH
+How to see DNS services in linux
+Explain Kubernetes architecture
+kubernates logs
+what is daemon,deployment & Statefull set in k8s
+what is difference between deployment & Services
+why use helmchart in kubernetes
+Explain Ansible work flow
+How to setup inventory & Ansible configurtion
+Ansible default port number
+How to add packages in ansible playbook
+ansible vault purpose
+how to set kubernetes plugins configuration in master
+how to configure k8s master and node
+how to enabled in HTTPS in environment
+SSL certifications
+why use SSL certifictions
+How to set password in Maven
+Authentication & Permission levels of jenkins
+What is promotheus
+if any supported packages crashed in pod level how to resolves in k8s
+how to deploy web apps through ansible
+what is the purpose of sudo su cmd in linux
+why use the build.xml,pom.xml & settings.xml
+
+1. Tell me about yourself, and technical background
+
+Networking/server/cloud related: 
+2. What is NAT network?
+A. NAT-Netweork Address Transalation, we can provide the internet for Private subnets via NAT.
+
+3. what is Load Balancer?
+A. distribute the loads for backend servers/ distribute the traffic to the backend nodes.
+    enable Cross-zone load balancing if u check this option the traffic distribute the  load evenly accross ecah ec2-enstance.
+
+4.  what is difference between vm and BareMetal server?
+ 
+5. what you suggest to client for which servers are best to use for application workload (Hint: like BareMetal/vm/cloud instances or container, depends on the answers will get more questions). 
+6. how you troubleshoot if App has not responsive or heavy loaded. (both in server and App/DB prospective. choose to answer according to your background like app or db or server side) 
+
+GIT/ CI/CD process related: 
+7. In GIT, when a pull request given by user from branch what are the next steps in CI/CD process. 
+
+Scripting/server related.
+how to display only 7th or 8th ( number's may vary)  columns in a file?
+A. cut -d  -f 1 test.txt
+
+8. what is Ansible?
+A. ansible is a Configuration management tool and also we use as a deployment tool.
+  ansible having an idempotency feature.
+
+9. what is role?
+A. place a group of playbooks in one file. it will help to reduce code complexity and increase the code reuseabiliy.
+  ansible-galaxy init role_name.
+
+10. what is structure of role and why we use it( or need or role usage in ansible)
+A.  role
+     |
+     tasks,templates,files,vars,handlers,defaults
+
+11. what is template?
+A. template is processing of generating dynamic contents/expression.
+    it is stored in jinja2 format. {{variable-name}} we can call like this
+
+12. if i place any script file under the template dir of a role and if i added that file in the play boot, will it work?
+A. No becuse the templates file are stored with .j2 format
+
+13. what are vars?
+A. vars means variables, to store the varibles under the vars directory.
+
+14. how to declare static or dynamic vars.
+    Ex. i would like to declare a var called version: x.x and while writing a playbook if i call the var "version" what will you get and if i wanted to give dynamic value to version what is the procedure. 
+A. static memory allocation once the memory is allocated, the memory size is fixed while in dynamic memory allocation, once the memory is allocated, the memory size can be changed.
+
+15. I have a different cluster like app, db, etc.. and each cluster have different set of servers. 
+    how you would achieve in  a single play book to write different configuration and execute them against all servers at a time.
+A. based on inventory file we can achive, here we declared groups.
+	
+16. what happens if a pod got failed or disconneted/unresponsive and how you troubleshoot it.
+17. how you troubleshoot if a server not responsive or went down (the question is related to server down, no way related to 7th question)
+18. have you seen any amber light on server and waht could be the causes and how you fix it (Server/operations related question) 
+
+
+=================================================================== Round - 2 ============================================================================================================== 	
+
+1. Tell me about yourself, your interests and your career plans
+
+2. what is Ansible
+3. what is role
+4. what is galaxy and how we can use it
+5. i have a set of servers, i want to create users on the servers using ansible, can you please write a play book
+6. what is Kubernetes
+7. what is sidecar container
+8. what is statefulset
+9. i have Kubernetes cluster with 2 nodes. 2 pods running on each node. one node got failed among the 2 nodes. what will happen to the pod, will it be fail,
+ please explain what you do . 
+10. based in same scenario (que 9), what you do if node is down, how you troubleshoot.
+11. what is the deployment strategy 
+12. how to check the logs in kubernetes
+
+
+=================================================================== Round - 3 ==============================================================================================================
+
+1.  Tell me about yourself, your interests and your career plans
+2.  tell me about kubernetes and micro services 
+3. kind of managerial round, general discussion.
