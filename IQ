@@ -1,0 +1,475 @@
+1.write a multistages pipeline?
+pipeline{
+	stages{
+ 	stage("module chekout"){
+		
+        steps{
+		git module url
+ }
+
+}
+ stage(git checkout){
+  steps {
+    git "repo url"
+}
+}
+
+stages("TF init"){
+steps{
+   initalize the terraform
+}
+ stages(tf plan){
+steps{
+  
+}
+}
+ stages(tf approve){
+  steps {
+}
+}
+}
+
+
+
+} 
+
+}
+
+2. write the docker file?
+
+FROM ubuntu/lunux
+Maintainer user name
+ADD  " hello" 
+COPY   text.tf
+RUN	echo "hello world"
+EPORT 8080  
+
+3. excute some commands using shell/bash?
+if (!= 2)
+  sh " service status httpd"
+fi
+
+4. how to print the value in shell?
+ name= "jyothi"
+echo "$name"
+print $name
+5. wt is state file in terraform?
+6. wt is master & feature branch?
+7.wt is terraform init command?
+
+1.Git: pull &amp;fetch,
+2.git rebase: remove the commits
+Before commit we use revert
+3.mv clean: just clean
+Clean install: clean all the jars,wars,and re install.
+4.pom.xml: dependencies, and which format u gernate jars/wars
+5.setting.xml
+6.jenkins job migration: backup the job directory and place into github .
+7.which module we use to interactive the password?
+8.how to create ec2 instance using terraform.
+9. in which file terraform plugins are stored.
+Mumshaad-kubernates ckA course.
+Cloud formation. &amp;cli.
+
+AWS:
+1. If EC2 reaches 100% CPU utilization,how to restart automatically
+A. We can achive this in several ways.here using “cloud watch” service
+Create alaramselect metrics and provide the detailscondition
+notification section--&gt;EC2action select Reboot this instance.
+2.how to encrypt existing EBS volume?
+A. There is no option to encrypt directly. Create snapshort for that EBS and volume and from the
+snapshort create volume and finally attach volume into EC2instance.
+3.difference b/w AMI &amp; Snapshort?
+AMI is complete EC2 backup means a back of virtual machine along with attached EBS volumes.
+Snapshort is just volume backup.
+
+4.what is high Avalabilti and how to achive it in EC2?
+put all ec2 instances across all availability zones in a regions,if one region get corrupt then move
+another availability zone.
+
+5.difference b/w security group &amp; network ACL?
+A. SG are acts as ec2 instance level,SG statefull means a traffic which is initiated outside ec2 and
+which is coming to inside ec2. It won’t apply outbound rules dis is called statefull.
+Network (access control list):attached to subnet ,we have explicit allow explicit deny,
+There is inbound rules allow traffic and outbound rule block the traffic e is not leave
+
+---------------------------------------------------------------------------------------------
+1.how to attach  region-1 intsance ebs volume to another region instance.
+A.take the snapshot of that volume and copy the snapshot to another region 
+and create the volume out of it and attach it.
+
+2. i have an intance with updated  patching in yasterday but today that instance is not working 
+so how to use same instance without changing the ip-address?
+A. create the instance from yesterday snapshot and assign the same elastic IP to the newly created instance and acccess it.
+   if it is private IP, decommission the instance which is not working and create the instance from snapshot 
+   and assign the same private IP when you are creating the instance
+
+3. difference b/w internet gateway an NAT gateway?
+to provide the internet for public subnet instances via internet gateway, to provide the internate for private subnets via NAT gateway
+(Network address transilation)
+
+4.what is autoscalling? 
+A. to scal-up the instances or add the instances based on the policy we define. 
+
+5. what is subnet and VPC?
+A.we difeine range of ip-addresses in your VPC.
+
+6. can u create custom vpc if u create then differenciate b/w default VPC &custom VPC.
+A. yes we can create, the difference is compare to default vpc custom vpc is more secure.
+
+7.what is docker and what is container? 
+A. docker is a container management.
+   container management  is a thin virtualization. here containers means vm. container has only one application,
+   it will take the required  files from host OS. container has no OS. it will use the kernel of host OS.
+   in container there is no OS it has only binary & library files.remaining all required details fetch from host OS.
+8.what is hardlink and softlink in docker?
+A. ln -s source/filename destination/filename---> we can access that file from this destionation directory
+
+
+9.what is git & github? 
+A.git is a tool stored data in locally,github is a server used to store the metadata of the file and directories
+
+10.can u install github server in onprimisess?
+A. yes we can install.
+
+11.difference b/w git pull, git fetch and git clone?
+A. git fetch: download the all our changes in our remote repo but not applied locally.if u need to apply using git merge
+   git pull: download the all our changes and it will directly applied in our locally.
+   git clone: to copy our remote repository into our local system by using clone.
+
+
+12.what is merg & when u will  get merge conflict then how to overcome that conflicts.
+A.to merge the branches. user1 and user2 edit the same file with the same line and trying the merge it then u will get merge conflict.
+pull the changes into your local amd merge it then you will overcome the mergeconflicts..
+
+13.what is revert? 
+A.revert is like undo ex:if u commit one message but later u thought i commited wrong commit then u revert that commit.
+
+14.what is terraform?
+A. Terraform is a tool for building, changing and versioning infrastructure safely and efficiently.
+
+15. advantages of terraform?
+A. automated infrastructure management, reduced provisioning time.
+
+16.what is CI&CD and diffence b/w continuous Delivery & Deployment?
+A. CI:Development practice that requires developers to inttegrate the code into shared repository several times a day.
+   CD(continuouly delivery): we will run the current project in mock server/ test server then client get satisfied.
+   CD(continuouly deployment):cleint is satisfied with everything then we deployed into production server is called CD .
+
+17.what is free style project ,maven project and pipeline project in jenkins?
+A.free style jobs  configuration is everithing is done by web UI, we can write DSL code then we return the projects in syntax based.
+
+
+18.what is build tool? 
+A.build automation is the act of scripting or automating a wide vareity of tasks that software developer
+ do in their day-to-day activities like
+   compliling the source code,packaging the code, running the automation test,deploying to production system.
+
+
+19.why we create PR request in git?
+A. pull request(pr) on github owner can share his code with others, 
+others can made changes and request to the owner to pull/merge his code changes into owner repository.
+
+20 what is AWS?
+
+21. what is git log? 
+A.it show the all the commits.
+
+
+22.what is POM? 
+A.project object model
+
+23. difference between unit testing n integration testing.
+
+24.what is Pipeline?
+A. for continues integration, using groovy language ,if u want parallel ,sequencs of ur code then use pipeline.
+we can devide the stages then we can easly identify the errors.
+
+25.what is master/slave architecture?what is the use of maste/slave
+A. if u want run the 2/3 jobs at a time the jenkins server may be crash so that we can run the jobs in slave1, slave2... like that
+
+26. how many ways we can connect the slave?
+    1.through ssh.
+    2. java web start.
+    
+27.what is the use of artifactory?tools,nexus/jfrog
+A.we can  maintain multiple versions of the delivery projects.
+they want use the fixed versions of jars,theywill keeped into one place and get the libraries,here every one get same libraries.
+
+28.how to call variables in pipeline script?
+A. ${appname}
+
+29.what is upstream/downstream projects.wt is the use of it?
+A.dependency for one project to another project.
+if u want bild multiple jobs at a time we can build one pipeline.
+
+30. what is the branching strategy in git And what u fallow?
+DEV,QA,Predpod,Prod
+
+
+
+
+mind tree:
+1.how to pass dynamic paramerter in docker?
+2.i have 10 file in my locall git and modified 2 file then how can commit that 2 files?
+
+3. in jenkins what is parameterized jobs.
+A.  A build parameter allows us to pass data into our Jenkins jobs. Using build parameters, we can pass any data we want:
+    git branch name, secret credentials, hostnames and ports, and so on.
+
+4.i donn't want  to login jenkins server  and build job at 3pm ?
+
+5.how to automate roll-back machanisum?
+6.to display only folders in a current directory?
+A. ls -d */
+
+7.i have 10 managed nodes and client said i don't want run application in 7 & 8 nodes? 
+A.create groups in inventory and then run which group is we need. ansible group-name -m ping
+
+8.you build one application evrything is fine but developer said dis is wrong build that time waht u will check?
+
+9. which command we used to check linux flavor?
+A, cat /etc/os-release
+10.
+
+
+
+
+TCS:
+1.what is difference between role& policy in AWS.
+2.what is difference b/w git fetch and git pull.
+3.what is git revert and reset
+4.i have done commit but later i realize its a worng commit how can i change ?
+5.what are the Docker voluems?
+6.can we delete the paused containers?
+6.how can we integrate jenkins with git?
+
+1.how to find a "word"(jyothi) has how many entries   in a file?
+A.grep -c phoenix * (instead of * u can give file name)-->>To Count the Number of Matches.
+
+2.how to find a dierectories from last 7 days to till now?
+A. find /directory/path/ -mtime +N -ls
+   find /directory/path/ -mtime +7 -ls 
+3.sed command ?
+A. we can replace the text in a file, select the lines
+   $sed jyothin s/n/naru or $sed 's/unix/linux/' geekfile.txt, 
+   $sed 's/unix/linux/g' geekfile.txt --> all the line will replace.
+   $sed 's/unix/linux/2' geekfile.txt -->replace second occurence in a line
+  o/p: jyothinaru
+  $sed -n '1,4p' sample.txt ---> to select lines from files 1 to 4 lines
+
+wipro:
+
+1. what is apllication load balancer(ALB).
+a.  you need a flexible feature set for your web applications with HTTP and HTTPS traffic. 
+    Operating at the request level. 
+  it works on both HTTP,HTTPS protocal,ALB of load the ssl at layer7.
+
+
+2. what is network load balancer(NLB)?
+A. NLB work on TCP(transmission control protocal) protocal. it send the traffic to layer 4
+   "any loadbalancer used to distribution of load backend nodes or instances"
+
+-----------------------------------------------------------------------------
+
+
+
+1. how to give 2 users (yuser1&user2 access) into a file?
+
+2.how to display opened files?
+A lsof
+
+3.how to display last 10 days modified files?
+A. find /directory/path/ -mtime -N -ls
+  But what if you need to find the files that have a modification date older than N, for example older than 30 days? In that case you need to use +N instead of -N
+
+1.what is throughput in loadbalancer?
+A. throughput is a factor in load balancers, and that's in picking the speed of the network interface. 
+ Load balancers typically come in either Fast Ethernet (100Mbps) or Gigabit Ethernet (1,000Mbps), the latter typically coming at a bit of a premium.
+
+2.How do I tell Jenkins to run a specific project on a particular slave?
+A.job configuration general and select option "restrict where this project can be run"
+and give the "labele expresion" our slave label.
+
+3. how to get master branch code into feature branch?
+
+4. can we deploye war file inside the httpd
+A. yes we caan deploye but only some web related wars not in application related.
+
+5. in which senario we get "outof memory exception "?
+A.  If the JVM is not able to allocate memory for the newly created objects an exception named OutOfMemoryError is thrown.
+   There are 3 types of errors in OutOfMemoryError −
+
+There are 3 types of errors in OutOfMemoryError −
+
+Java heap space.
+GC Overhead limit exceeded.
+Permgen space.
+
+6. how to increase the memory for java?
+A. Open the catalina.sh file (TomcatInstallDirectory/bin/catalina.sh).
+	(If you are unable to find the catalina.sh file, make the following changes in the startup.sh file)
+	Add the following line:
+	export JAVA_OPTS="-Xms512M -Xmx1024M"
+	export CATALINA_OPTS="-Xms512M -Xmx1024M"
+
+	where:
+
+	Xms is the initial (start) memory pool
+	Xmx is the maximum memory pool
+	Xss is the thread stack size
+
+7. what is m2 in maven
+A. The local repository of Maven is a directory on the local machine, where all the project artifacts are stored.
+When a Maven build is executed, Maven automatically downloads all the dependency jars into the local repository.
+Usually, this directory is named .m2.
+default location is 
+"Linux: /home/<User_Name>/.m2"
+
+8.difference b/w mvn clean & mvn package
+9.difference b/w mvn package & mvn install
+	
+
+10. how to check port listners in linux?
+A. using netstat
+
+11. what is AMI &IAM?
+A. Identity and Access Management(IAM)
+   Amazon Machine Image (AMI) 
+
+12. what is ACL permissons:
+
+13. how to  run docker build and push into registry using pipeline script?
+A.  pipeline {
+  environment {
+    registry = "gustavoapolinario/docker-test"
+    registryCredential = 'dockerhub'
+    dockerImage = ''
+  }
+  agent any
+  stages {
+    stage('Cloning Git') {
+      steps {
+        git 'https://github.com/gustavoapolinario/microservices-node-example-todo-frontend.git'
+      }
+    }
+    stage('Building image') {
+      steps{
+        script {
+          dockerImage = docker.build registry + ":$BUILD_NUMBER"
+         }
+      }
+    }
+    stage('Deploy Image') {
+      steps{
+        script {
+          docker.withRegistry( '', registryCredential ) {
+            dockerImage.push()
+          }
+        }
+      }
+    }
+    stage('Remove Unused docker image') {
+      steps{
+        sh "docker rmi $registry:$BUILD_NUMBER"
+      }
+    }
+  }
+}
+Save and run it.
+
+The build is now complete and the image will be send to docker registry.
+
+14. if we lose the jenkins admin paasword, how can we login to the jenkins server? trouble shoot it?
+A. using config.xml file 
+   -first change the line from <useSecurity>true</useSecurity> to <useSecurity>false</useSecurity>
+   - then goto the jenkins portal and goto "configure global security" here enable the "security relam"
+      as use jenkins own database and setup ""logged in user can do anything"
+   - again signup and then give the admin access to the particular user. 
+15. what is ansible role?
+A. place a group of playbooks in one file. it will help to reduce code complexity and increase the code reuseabiliy.
+  ansible-galaxy init role_name
+ 
+
+16. how to integrate  jenkins with AWS?
+A. install AWS CLI in Jenkins server then
+   install AWS-credential plugin, then add aws credentials under managecredential--> select AWS credentials
+   provide access key and secrte key
+
+17.   git workflow strategy your fallow?
+
+18. what is the environment variables in jenkins?
+A.  Jenkins environment variable is a global variable, exposed via env variable and used in Jenkins pipelines and anywhere into Jenkinsfile
+
+   
+19. jenkins file for deployiing application based on condition?
+A.
+    pipeline {
+    agent any
+
+    stages {
+        stage('Build') {
+            steps {
+                sh 'make' 
+                archiveArtifacts artifacts: '**/target/*.jar', fingerprint: true 
+            }
+        }
+     stage('Test') {
+            steps {
+                /* `make check` returns non-zero on test failures,
+                * using `true` to allow the Pipeline to continue nonetheless
+                */
+                sh 'make check || true' 
+                junit '**/target/*.xml' 
+            }
+        }
+    stage('Deploy') {
+            when {
+              expression {
+                currentBuild.result == null || currentBuild.result == 'SUCCESS' 
+              }
+            }
+            steps {
+                sh 'make publish'
+            }
+        }
+    }
+
+}
+
+20. how to restore deleated branch in git?
+A. yes! by using git reflog <bsrsnch-name>
+
+21. what is the difference between Nginx and Http? default port for Nginx?
+A. The main difference between Apache and NGINX lies in their design architecture. 
+   Apache uses a process-driven approach and creates a new thread for each request.
+   Whereas NGINX uses an event-driven architecture to handle multiple requests within one thread.
+   default port is 80
+
+22.what is the default port numer for Docker?
+A.  2375 or 2376
+---
+- hosts: webservers
+  tasks:
+    copy:
+      src: /opt/targates/webapps/sampl.txt
+      dest: /sample/ansible/
+
+
+    command: echo 'ls'
+
+    exceute:
+       
+ansible-playbook -zo playbook.yml
+
+
+
+
+what is difference between vpc and vpn?
+A.If we want to communicate with instances within the organisation then VPC Peering will be best suited. 
+	If we want to communicate with other organisations it is not possible. 
+	So that’s why we get a new concept known as VPN.
+
+
+concurent builds?
+ using this plugin we can run more than  one job parllelly.
